@@ -17,21 +17,39 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul> -->
-    <p>
     <label for="from">Enter DOC ID</label>
     <br />
-    <input type="text" name="docID" id="docID" value="type your message..." style="height: 50px; width: 200px;" onclick="this.value=''"/>
-    <input type='submit' value='text' />
-    </p> 
+    <input type="text" name="docID" id="docID" style="height: 20px; width: 200px;"/>
+    <br />
+    <button id="document-search-submit" v-on:click="submitDoc()">Submit</button>
+    <br />
+    {{msg}}
+
   </div>
 </template>
 
 <script>
+import Axios from 'axios'
 export default {
+  
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+       msg: 'Welcome to DMS App'
+    }
+  },
+  methods: {
+    submitDoc () {
+      //Axios.get("http://172.17.35.66:3000/saps/1")
+      //Axios.get("http://172.17.35.66:8080/document/1")
+      //.then( (response)=>{
+        //let docID = (response.data.id + " " + response.data.user + " " + response.data. + " " +response.data.description)  
+        //this.msg = response
+        //alert(docID)
+        alert ("id:1, link:http://google.com")
+        //console.log(response)
+      //})
+      
     }
   }
 }
