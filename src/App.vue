@@ -40,13 +40,13 @@ export default {
   },
   methods: {
     submitDoc () {
-      //Axios.get("http://172.17.35.66:3000/saps/1")
+      Axios.get("http://172.17.35.66:3000/saps/1")
       //Axios.get("http://172.17.35.66:8080/document/1")
       //.then( (response)=>{
         //let docID = (response.data.id + " " + response.data.user + " " + response.data. + " " +response.data.description)  
         //this.msg = response
         //alert(docID)
-        alert ("id:1, link:http://google.com")
+        alert (" " + "id:1, link:http://google.com")
         //console.log(response)
       //})
       
