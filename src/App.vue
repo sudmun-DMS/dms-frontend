@@ -19,11 +19,21 @@
     </ul> -->
     <label for="from">Enter DOC ID</label>
     <br />
-    <input type="text" name="docID" id="docID" style="height: 20px; width: 200px;"/>
+    <input type="text" v-model="docId" name="docID" id="docID" style="height: 20px; width: 200px;"/>
     <br />
-    <button id="document-search-submit" v-on:click="submitDoc()">Submit</button>
+    <button id="document-search-submit" v-on:click="submitDoc(docId)">Submit</button>
     <br />
-    {{msg}}
+    <div v-if="isError">
+   {{msg}}
+    </div>
+    <div v-if="!isError">
+    <div class="">
+    DOC ID: = {{resultMsg.docID}}
+    </div>
+    <div class="">
+    link: = {{resultMsg.link}}
+    </div>
+    </div>
 
   </div>
 </template>
@@ -35,23 +45,56 @@ export default {
   name: 'app',
   data () {
     return {
-       msg: 'Welcome to DMS App'
+       msg: 'Welcome to DMS App',
+       docId:'',
+       resultMsg : {
+         docID:'',
+         link:''
+       },
+       isError:true
     }
   },
   methods: {
-    submitDoc () {
-      Axios.get("http://172.17.35.66:3000/saps/1")
-      //Axios.get("http://172.17.35.66:8080/document/1")
-      //.then( (response)=>{
-        //let docID = (response.data.id + " " + response.data.user + " " + response.data. + " " +response.data.description)  
-        //this.msg = response
-        //alert(docID)
-        alert (" " + "id:1, link:http://google.com")
-        //console.log(response)
-      //})
+    success (docData) {
+      this.msg = "DOC ID: = " + docData.data.body.id + "link: =" + docData.data.body.link
+      this.resultMsg.docID = docData.data.body.id 
+      this.resultMsg.link = docData.data.body.link
+    },
+    failed (docData) {
+      this.msg = "DOC ID NOT FOUND"
+    },
+    submitDoc (id) {
+      if (id == ""){
+         this.msg = "Please Enter DOC ID!!!"
+      }
+      else 
+      {
+        let baseURL = "http://172.17.35.66:8080" 
+        Axios.get(baseURL + "/document/"+id)
+        .then( (response)=>{
+          let returnCode = response.data.header.code
+          if (returnCode == "200") {
+            this.success (response)
+            this.isError = false
+          } else {
+            this.isError = true
+            this.failed (response)
+            }
+          //alert(returnCode)
+          // let docID = (response.data.id + " " + response.data.user + " " + response.data. + " " +response.data.description)  
+          //this.msg = response
+          // alert(docID)
+          // alert (" " + "id:3, link:http://archive.xom.com/jlkajsdfjiwep;oij/~kjkljdfj/new_doc_3.docx")
+          
+          // this.msg = ("id:3 \n link:http://archive.xom.com/jlkajsdfjiwep;oij/~kjkljdfj/new_doc_3.docx") 
+          console.log(response)
+        })
+      }
       
     }
+    
   }
+
 }
 </script>
 
