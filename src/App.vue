@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+ <!--     
     <img src="./assets/logo.png">
     <h1></h1>
     <h2>Essential Links</h2>
@@ -15,7 +16,13 @@
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    </ul> -->
+    <p>
+    <label for="from">Enter DOC ID</label>
+    <br />
+    <input type="text" name="docID" id="docID" value="type your message..." style="height: 50px; width: 200px;" onclick="this.value=''"/>
+    <input type='submit' value='text' />
+    </p> 
   </div>
 </template>
 
