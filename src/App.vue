@@ -78,7 +78,7 @@ export default {
       }
       else 
       {
-        let baseURL = "http://172.17.35.66:8080" 
+        let baseURL = "http://172.17.35.66:8080"         
         Axios.get(baseURL + "/document/"+id)
         .then( (response)=>{
           let returnCode = response.data.header.code
@@ -91,6 +91,11 @@ export default {
             }
           console.log(response)
         })
+        .catch(error => {
+          console.log(error)
+          alert(error)
+        })
+      
       }
       
     }
