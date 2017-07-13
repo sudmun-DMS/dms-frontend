@@ -1,11 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
-
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: '/',
     filename: 'build.js'
   },
   module: {
@@ -35,7 +35,11 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
-      }
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css']
+      },
     ]
   },
   resolve: {
@@ -47,6 +51,13 @@ module.exports = {
     historyApiFallback: true,
     noInfo: true
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      // {output}/file.txt
+      { from: './index.html', to: 'index.html' },
+    ]
+    )
+  ],
   performance: {
     hints: false
   },
