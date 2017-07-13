@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170713 11:34:56.497" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<suite source="/Users/archer/Desktop/vue-template-webpack-simple/test/e2e" id="s1" name="E2E">
+<suite source="/Users/archer/Desktop/vue-template-webpack-simple/test/e2e/search-dms-by-id.robot" id="s1-s1" name="Search-Dms-By-Id">
+<test id="s1-s1-t1" name="Input docID = 1 should return &quot;DOC ID = 1 link: = http://file01.txt&quot;">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://localhost:8081/</arg>
+<arg>gc</arg>
+</arguments>
+<msg timestamp="20170713 11:34:57.081" level="INFO">Opening browser 'gc' to base url 'http://localhost:8081/'</msg>
+<status status="PASS" endtime="20170713 11:35:00.108" starttime="20170713 11:34:57.081"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="Selenium2Library">
+<doc>Sets current browser's implicit wait in seconds.</doc>
+<arguments>
+<arg>2 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20170713 11:35:00.115" starttime="20170713 11:35:00.109"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>docID</arg>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20170713 11:35:00.116" level="INFO">Typing text '1' into text field 'docID'</msg>
+<status status="PASS" endtime="20170713 11:35:00.293" starttime="20170713 11:35:00.116"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>document-search-submit</arg>
+</arguments>
+<msg timestamp="20170713 11:35:00.294" level="INFO">Clicking button 'document-search-submit'.</msg>
+<status status="PASS" endtime="20170713 11:35:02.420" starttime="20170713 11:35:00.294"></status>
+</kw>
+<status status="PASS" endtime="20170713 11:35:02.421" critical="yes" starttime="20170713 11:34:57.079"></status>
+</test>
+<test id="s1-s1-t2" name="Input docID = 5 should return &quot;DOC ID NOT FOUND&quot;">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>docID</arg>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20170713 11:35:02.424" level="INFO">Typing text '5' into text field 'docID'</msg>
+<status status="PASS" endtime="20170713 11:35:02.478" starttime="20170713 11:35:02.423"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>document-search-submit</arg>
+</arguments>
+<msg timestamp="20170713 11:35:02.479" level="INFO">Clicking button 'document-search-submit'.</msg>
+<status status="PASS" endtime="20170713 11:35:04.558" starttime="20170713 11:35:02.479"></status>
+</kw>
+<status status="PASS" endtime="20170713 11:35:04.559" critical="yes" starttime="20170713 11:35:02.422"></status>
+</test>
+<status status="PASS" endtime="20170713 11:35:04.560" starttime="20170713 11:34:56.587"></status>
+</suite>
+<status status="PASS" endtime="20170713 11:35:04.565" starttime="20170713 11:34:56.499"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="E2E" pass="2">E2E</stat>
+<stat fail="0" id="s1-s1" name="Search-Dms-By-Id" pass="2">E2E.Search-Dms-By-Id</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
