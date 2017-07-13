@@ -6,23 +6,23 @@
     <br />
     <button id="document-search-submit" v-on:click="submitDoc(docId)">Submit</button>
     <br /><br />
-    <div v-if="isError">
+    <div v-if="isError" id="errorMSG">
    {{msg}}
     </div>
-    <div v-if="!isError">
-    <div class="">
+    <div v-if="!isError" >
+    <div class="" id="docIdResult">
     DOC ID: = {{resultMsg.docID}}
     </div>
-    <div class="">
+    <div class="" id="link">
     link: = {{resultMsg.link}}
     </div>
-    <div class="">
+    <div class="" id="status">
     Status: = {{resultMsg.status}}
     </div>
-    <div class="">
+    <div class="" id="user">
     User: = {{resultMsg.user}}
     </div>
-    <div class="">
+    <div class="" id="description" >
     Description: = {{resultMsg.description}}
     </div>
     </div>

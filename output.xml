@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170713 11:53:49.706" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
+<robot generated="20170713 17:13:32.143" generator="Robot 3.0.2 (Python 2.7.13 on darwin)">
 <suite source="/Users/archer/Desktop/vue-template-webpack-simple/test/e2e" id="s1" name="E2E">
 <suite source="/Users/archer/Desktop/vue-template-webpack-simple/test/e2e/search-dms-by-id.robot" id="s1-s1" name="Search-Dms-By-Id">
 <test id="s1-s1-t1" name="Input docID = 1 should return &quot;DOC ID = 1 link: = http://file01.txt&quot;">
 <kw name="Open Browser" library="Selenium2Library">
 <doc>Opens a new browser instance to given URL.</doc>
 <arguments>
-<arg>http://localhost:8081/</arg>
+<arg>${BASE_SERVER}</arg>
 <arg>gc</arg>
 </arguments>
-<msg timestamp="20170713 11:53:50.518" level="INFO">Opening browser 'gc' to base url 'http://localhost:8081/'</msg>
-<status status="PASS" endtime="20170713 11:54:00.520" starttime="20170713 11:53:50.518"></status>
+<msg timestamp="20170713 17:13:32.923" level="INFO">Opening browser 'gc' to base url 'http://localhost:8081/'</msg>
+<status status="PASS" endtime="20170713 17:13:38.365" starttime="20170713 17:13:32.922"></status>
 </kw>
 <kw name="Set Browser Implicit Wait" library="Selenium2Library">
 <doc>Sets current browser's implicit wait in seconds.</doc>
 <arguments>
 <arg>2 seconds</arg>
 </arguments>
-<status status="PASS" endtime="20170713 11:54:00.524" starttime="20170713 11:54:00.521"></status>
+<status status="PASS" endtime="20170713 17:13:38.369" starttime="20170713 17:13:38.367"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -25,18 +25,33 @@
 <arg>docID</arg>
 <arg>1</arg>
 </arguments>
-<msg timestamp="20170713 11:54:00.525" level="INFO">Typing text '1' into text field 'docID'</msg>
-<status status="PASS" endtime="20170713 11:54:00.690" starttime="20170713 11:54:00.524"></status>
+<msg timestamp="20170713 17:13:38.371" level="INFO">Typing text '1' into text field 'docID'</msg>
+<status status="PASS" endtime="20170713 17:13:38.571" starttime="20170713 17:13:38.370"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>document-search-submit</arg>
 </arguments>
-<msg timestamp="20170713 11:54:00.691" level="INFO">Clicking button 'document-search-submit'.</msg>
-<status status="PASS" endtime="20170713 11:54:02.829" starttime="20170713 11:54:00.691"></status>
+<msg timestamp="20170713 17:13:38.572" level="INFO">Clicking button 'document-search-submit'.</msg>
+<status status="PASS" endtime="20170713 17:13:40.713" starttime="20170713 17:13:38.572"></status>
 </kw>
-<status status="PASS" endtime="20170713 11:54:02.830" critical="yes" starttime="20170713 11:53:50.516"></status>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
+<arguments>
+<arg>docIdResult</arg>
+<arg>DOC ID: = 1</arg>
+</arguments>
+<msg timestamp="20170713 17:13:40.714" level="INFO">Verifying element 'docIdResult' contains exactly text 'DOC ID: = 1'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170713 17:13:43.342" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170713 17:13:43.342" starttime="20170713 17:13:42.761"></status>
+</kw>
+<msg timestamp="20170713 17:13:43.386" level="FAIL">ValueError: Element locator 'docIdResult' did not match any elements.</msg>
+<status status="FAIL" endtime="20170713 17:13:43.386" starttime="20170713 17:13:40.713"></status>
+</kw>
+<status status="FAIL" endtime="20170713 17:13:43.387" critical="yes" starttime="20170713 17:13:32.921">ValueError: Element locator 'docIdResult' did not match any elements.</status>
 </test>
 <test id="s1-s1-t2" name="Input docID = 5 should return &quot;DOC ID NOT FOUND&quot;">
 <kw name="Clear Element Text" library="Selenium2Library">
@@ -44,140 +59,58 @@
 <arguments>
 <arg>docID</arg>
 </arguments>
-<status status="PASS" endtime="20170713 11:54:02.905" starttime="20170713 11:54:02.879"></status>
+<status status="PASS" endtime="20170713 17:13:43.484" starttime="20170713 17:13:43.422"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
 <arguments>
 <arg>docID</arg>
-<arg>2</arg>
+<arg>5</arg>
 </arguments>
-<msg timestamp="20170713 11:54:02.905" level="INFO">Typing text '2' into text field 'docID'</msg>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20170713 11:54:03.196" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<status status="FAIL" endtime="20170713 11:54:03.196" starttime="20170713 11:54:02.997"></status>
+<msg timestamp="20170713 17:13:43.485" level="INFO">Typing text '5' into text field 'docID'</msg>
+<status status="PASS" endtime="20170713 17:13:43.540" starttime="20170713 17:13:43.484"></status>
 </kw>
-<msg timestamp="20170713 11:54:03.196" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<msg timestamp="20170713 11:54:03.246" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<status status="FAIL" endtime="20170713 11:54:03.246" starttime="20170713 11:54:02.905"></status>
-</kw>
-<status status="FAIL" endtime="20170713 11:54:03.247" critical="yes" starttime="20170713 11:54:02.878">UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</status>
-</test>
-<test id="s1-s1-t3" name="Input docID = 5 should return &quot;DOC ID NOT FOUND&quot;">
-<kw name="Clear Element Text" library="Selenium2Library">
-<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
 <arguments>
-<arg>docID</arg>
+<arg>document-search-submit</arg>
 </arguments>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20170713 11:54:03.261" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<status status="FAIL" endtime="20170713 11:54:03.262" starttime="20170713 11:54:03.257"></status>
+<msg timestamp="20170713 17:13:43.543" level="INFO">Clicking button 'document-search-submit'.</msg>
+<status status="PASS" endtime="20170713 17:13:45.631" starttime="20170713 17:13:43.542"></status>
 </kw>
-<msg timestamp="20170713 11:54:03.262" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<msg timestamp="20170713 11:54:03.350" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<status status="FAIL" endtime="20170713 11:54:03.350" starttime="20170713 11:54:03.253"></status>
-</kw>
-<status status="FAIL" endtime="20170713 11:54:03.350" critical="yes" starttime="20170713 11:54:03.249">UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</status>
-</test>
-<test id="s1-s1-t4" name="Input docID = &quot;&quot; should return &quot;Please Enter DOC ID!!!&quot;">
-<kw name="Clear Element Text" library="Selenium2Library">
-<doc>Clears the text value of text entry element identified by `locator`.</doc>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
 <arguments>
-<arg>docID</arg>
+<arg>errorMSG</arg>
+<arg>DOC ID NOT FOUND</arg>
 </arguments>
+<msg timestamp="20170713 17:13:45.632" level="INFO">Verifying element 'errorMSG' contains exactly text 'DOC ID NOT FOUND'.</msg>
 <kw name="Capture Page Screenshot" library="Selenium2Library">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20170713 11:54:03.362" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<status status="FAIL" endtime="20170713 11:54:03.362" starttime="20170713 11:54:03.358"></status>
+<msg timestamp="20170713 17:13:45.923" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170713 17:13:45.923" starttime="20170713 17:13:45.704"></status>
 </kw>
-<msg timestamp="20170713 11:54:03.362" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<msg timestamp="20170713 11:54:03.363" level="FAIL">UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<status status="FAIL" endtime="20170713 11:54:03.364" starttime="20170713 11:54:03.354"></status>
+<msg timestamp="20170713 17:13:45.924" level="FAIL">The text of element 'errorMSG' should have been 'DOC ID NOT FOUND' but in fact it was 'Welcome to DMS App'.</msg>
+<status status="FAIL" endtime="20170713 17:13:45.924" starttime="20170713 17:13:45.631"></status>
 </kw>
-<status status="FAIL" endtime="20170713 11:54:03.399" critical="yes" starttime="20170713 11:54:03.352">UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</status>
+<status status="FAIL" endtime="20170713 17:13:45.925" critical="yes" starttime="20170713 17:13:43.420">The text of element 'errorMSG' should have been 'DOC ID NOT FOUND' but in fact it was 'Welcome to DMS App'.</status>
 </test>
-<status status="FAIL" endtime="20170713 11:54:03.400" starttime="20170713 11:53:49.796"></status>
+<status status="FAIL" endtime="20170713 17:13:45.928" starttime="20170713 17:13:32.251"></status>
 </suite>
-<status status="FAIL" endtime="20170713 11:54:03.406" starttime="20170713 11:53:49.708"></status>
+<status status="FAIL" endtime="20170713 17:13:45.936" starttime="20170713 17:13:32.178"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="3" pass="1">Critical Tests</stat>
-<stat fail="3" pass="1">All Tests</stat>
+<stat fail="2" pass="0">Critical Tests</stat>
+<stat fail="2" pass="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="3" id="s1" name="E2E" pass="1">E2E</stat>
-<stat fail="3" id="s1-s1" name="Search-Dms-By-Id" pass="1">E2E.Search-Dms-By-Id</stat>
+<stat fail="2" id="s1" name="E2E" pass="0">E2E</stat>
+<stat fail="2" id="s1-s1" name="Search-Dms-By-Id" pass="0">E2E.Search-Dms-By-Id</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20170713 11:54:03.196" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<msg timestamp="20170713 11:54:03.248" level="WARN">Multiple test cases with name 'Input docID = 5 should return "DOC ID NOT FOUND"' executed in test suite 'E2E.Search-Dms-By-Id'.</msg>
-<msg timestamp="20170713 11:54:03.262" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
-<msg timestamp="20170713 11:54:03.362" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: UnexpectedAlertPresentException: Alert Text: None
-Message: unexpected alert open: {Alert text : Error: Network Error}
-  (Session info: chrome=59.0.3071.115)
-  (Driver info: chromedriver=2.30.477690 (c53f4ad87510ee97b5c3425a14c0e79780cdf262),platform=Mac OS X 10.12.5 x86_64)
-</msg>
 </errors>
 </robot>
