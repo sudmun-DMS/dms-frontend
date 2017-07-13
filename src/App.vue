@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <label for="from">Enter DOC ID</label>
+    <label for="from">Enter DOC ID DEPLOY LA</label>
     <br />
     <input type="text" v-model="docId" name="docID" id="docID" style="height: 20px; width: 200px;"/>
     <br />
