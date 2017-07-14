@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170714 13:09:38.518" generator="Robot 3.0 (Python 2.7.13 on darwin)">
+<robot generated="20170714 14:07:16.704" generator="Robot 3.0 (Python 2.7.13 on darwin)">
 <suite source="/Users/uhura/Desktop/dms-frontend/test/e2e" id="s1" name="E2E">
 <suite source="/Users/uhura/Desktop/dms-frontend/test/e2e/search-dms-by-id.robot" id="s1-s1" name="Search-Dms-By-Id">
 <test id="s1-s1-t1" name="Input docID = 1 should return &quot;DOC ID = 1 link: = http://file01.txt&quot;">
@@ -10,10 +10,10 @@
 <arg>${BASE_SERVER}</arg>
 <arg>gc</arg>
 </arguments>
-<msg timestamp="20170714 13:09:39.083" level="INFO">Opening browser 'gc' to base url 'http://localhost:8080/'</msg>
-<status status="PASS" endtime="20170714 13:09:46.937" starttime="20170714 13:09:39.083"></status>
+<msg timestamp="20170714 14:07:17.301" level="INFO">Opening browser 'gc' to base url 'http://localhost:8080/'</msg>
+<status status="PASS" endtime="20170714 14:07:23.196" starttime="20170714 14:07:17.300"></status>
 </kw>
-<status status="PASS" endtime="20170714 13:09:46.942" starttime="20170714 13:09:39.082"></status>
+<status status="PASS" endtime="20170714 14:07:23.197" starttime="20170714 14:07:17.299"></status>
 </kw>
 <kw name="Search document">
 <arguments>
@@ -25,18 +25,18 @@
 <arg>docID</arg>
 <arg>${doc id}</arg>
 </arguments>
-<msg timestamp="20170714 13:09:46.947" level="INFO">Typing text '1' into text field 'docID'</msg>
-<status status="PASS" endtime="20170714 13:09:47.126" starttime="20170714 13:09:46.946"></status>
+<msg timestamp="20170714 14:07:23.200" level="INFO">Typing text '1' into text field 'docID'</msg>
+<status status="PASS" endtime="20170714 14:07:23.340" starttime="20170714 14:07:23.199"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>document-search-submit</arg>
 </arguments>
-<msg timestamp="20170714 13:09:47.127" level="INFO">Clicking button 'document-search-submit'.</msg>
-<status status="PASS" endtime="20170714 13:09:47.292" starttime="20170714 13:09:47.127"></status>
+<msg timestamp="20170714 14:07:23.340" level="INFO">Clicking button 'document-search-submit'.</msg>
+<status status="PASS" endtime="20170714 14:07:23.453" starttime="20170714 14:07:23.340"></status>
 </kw>
-<status status="PASS" endtime="20170714 13:09:47.292" starttime="20170714 13:09:46.944"></status>
+<status status="PASS" endtime="20170714 14:07:23.453" starttime="20170714 14:07:23.198"></status>
 </kw>
 <kw name="Should found document">
 <arguments>
@@ -47,7 +47,7 @@
 <arguments>
 <arg>id=docIdResult</arg>
 </arguments>
-<status status="PASS" endtime="20170714 13:09:47.554" starttime="20170714 13:09:47.293"></status>
+<status status="PASS" endtime="20170714 14:07:23.707" starttime="20170714 14:07:23.454"></status>
 </kw>
 <kw name="Wait Until Element Contains" library="Selenium2Library">
 <doc>Waits until given element contains `text`.</doc>
@@ -55,7 +55,7 @@
 <arg>id=docIdResult</arg>
 <arg>DOC ID: = ${doc id}</arg>
 </arguments>
-<status status="PASS" endtime="20170714 13:09:47.586" starttime="20170714 13:09:47.554"></status>
+<status status="PASS" endtime="20170714 14:07:23.739" starttime="20170714 14:07:23.707"></status>
 </kw>
 <kw name="Element Text Should Be" library="Selenium2Library">
 <doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
@@ -63,8 +63,8 @@
 <arg>status</arg>
 <arg>Status: = RELEASE</arg>
 </arguments>
-<msg timestamp="20170714 13:09:47.587" level="INFO">Verifying element 'status' contains exactly text 'Status: = RELEASE'.</msg>
-<status status="PASS" endtime="20170714 13:09:47.637" starttime="20170714 13:09:47.586"></status>
+<msg timestamp="20170714 14:07:23.740" level="INFO">Verifying element 'status' contains exactly text 'Status: = RELEASE'.</msg>
+<status status="PASS" endtime="20170714 14:07:23.785" starttime="20170714 14:07:23.740"></status>
 </kw>
 <kw name="Element Text Should Be" library="Selenium2Library">
 <doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
@@ -72,8 +72,8 @@
 <arg>user</arg>
 <arg>User: = SUV</arg>
 </arguments>
-<msg timestamp="20170714 13:09:47.637" level="INFO">Verifying element 'user' contains exactly text 'User: = SUV'.</msg>
-<status status="PASS" endtime="20170714 13:09:47.684" starttime="20170714 13:09:47.637"></status>
+<msg timestamp="20170714 14:07:23.786" level="INFO">Verifying element 'user' contains exactly text 'User: = SUV'.</msg>
+<status status="PASS" endtime="20170714 14:07:23.829" starttime="20170714 14:07:23.785"></status>
 </kw>
 <kw name="Element Text Should Be" library="Selenium2Library">
 <doc>Verifies element identified by `locator` exactly contains text `expected`.</doc>
@@ -81,8 +81,8 @@
 <arg>description</arg>
 <arg>Description: = PMOC</arg>
 </arguments>
-<msg timestamp="20170714 13:09:47.685" level="INFO">Verifying element 'description' contains exactly text 'Description: = PMOC'.</msg>
-<status status="PASS" endtime="20170714 13:09:47.727" starttime="20170714 13:09:47.684"></status>
+<msg timestamp="20170714 14:07:23.830" level="INFO">Verifying element 'description' contains exactly text 'Description: = PMOC'.</msg>
+<status status="PASS" endtime="20170714 14:07:23.874" starttime="20170714 14:07:23.829"></status>
 </kw>
 <kw name="Element Should Contain" library="Selenium2Library">
 <doc>Verifies element identified by `locator` contains text `expected`.</doc>
@@ -90,19 +90,19 @@
 <arg>link</arg>
 <arg>http://archive/PMOC</arg>
 </arguments>
-<msg timestamp="20170714 13:09:47.728" level="INFO">Verifying element 'link' contains text 'http://archive/PMOC'.</msg>
-<status status="PASS" endtime="20170714 13:09:47.771" starttime="20170714 13:09:47.727"></status>
+<msg timestamp="20170714 14:07:23.875" level="INFO">Verifying element 'link' contains text 'http://archive/PMOC'.</msg>
+<status status="PASS" endtime="20170714 14:07:23.918" starttime="20170714 14:07:23.874"></status>
 </kw>
-<status status="PASS" endtime="20170714 13:09:47.772" starttime="20170714 13:09:47.292"></status>
+<status status="PASS" endtime="20170714 14:07:23.918" starttime="20170714 14:07:23.453"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170714 13:09:48.169" starttime="20170714 13:09:47.772"></status>
+<status status="PASS" endtime="20170714 14:07:24.190" starttime="20170714 14:07:23.918"></status>
 </kw>
 <tags>
 <tag>feature1</tag>
 </tags>
-<status status="PASS" endtime="20170714 13:09:48.170" critical="yes" starttime="20170714 13:09:39.081"></status>
+<status status="PASS" endtime="20170714 14:07:24.190" critical="yes" starttime="20170714 14:07:17.298"></status>
 </test>
 <test id="s1-s1-t2" name="Input docID = 5 should return &quot;DOC ID NOT FOUND&quot;">
 <kw name="Open search document">
@@ -112,10 +112,10 @@
 <arg>${BASE_SERVER}</arg>
 <arg>gc</arg>
 </arguments>
-<msg timestamp="20170714 13:09:48.188" level="INFO">Opening browser 'gc' to base url 'http://localhost:8080/'</msg>
-<status status="PASS" endtime="20170714 13:09:50.817" starttime="20170714 13:09:48.188"></status>
+<msg timestamp="20170714 14:07:24.193" level="INFO">Opening browser 'gc' to base url 'http://localhost:8080/'</msg>
+<status status="PASS" endtime="20170714 14:07:26.962" starttime="20170714 14:07:24.192"></status>
 </kw>
-<status status="PASS" endtime="20170714 13:09:50.818" starttime="20170714 13:09:48.187"></status>
+<status status="PASS" endtime="20170714 14:07:26.963" starttime="20170714 14:07:24.192"></status>
 </kw>
 <kw name="Search document">
 <arguments>
@@ -127,26 +127,26 @@
 <arg>docID</arg>
 <arg>${doc id}</arg>
 </arguments>
-<msg timestamp="20170714 13:09:50.820" level="INFO">Typing text '5' into text field 'docID'</msg>
-<status status="PASS" endtime="20170714 13:09:50.997" starttime="20170714 13:09:50.820"></status>
+<msg timestamp="20170714 14:07:26.965" level="INFO">Typing text '5' into text field 'docID'</msg>
+<status status="PASS" endtime="20170714 14:07:27.145" starttime="20170714 14:07:26.964"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>document-search-submit</arg>
 </arguments>
-<msg timestamp="20170714 13:09:50.997" level="INFO">Clicking button 'document-search-submit'.</msg>
-<status status="PASS" endtime="20170714 13:09:51.109" starttime="20170714 13:09:50.997"></status>
+<msg timestamp="20170714 14:07:27.146" level="INFO">Clicking button 'document-search-submit'.</msg>
+<status status="PASS" endtime="20170714 14:07:27.263" starttime="20170714 14:07:27.146"></status>
 </kw>
-<status status="PASS" endtime="20170714 13:09:51.109" starttime="20170714 13:09:50.818"></status>
+<status status="PASS" endtime="20170714 14:07:27.264" starttime="20170714 14:07:26.963"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>document-search-submit</arg>
 </arguments>
-<msg timestamp="20170714 13:09:51.110" level="INFO">Clicking button 'document-search-submit'.</msg>
-<status status="PASS" endtime="20170714 13:09:51.171" starttime="20170714 13:09:51.110"></status>
+<msg timestamp="20170714 14:07:27.264" level="INFO">Clicking button 'document-search-submit'.</msg>
+<status status="PASS" endtime="20170714 14:07:27.321" starttime="20170714 14:07:27.264"></status>
 </kw>
 <kw name="Wait Until Element Contains" library="Selenium2Library">
 <doc>Waits until given element contains `text`.</doc>
@@ -154,16 +154,16 @@
 <arg>id=errorMSG</arg>
 <arg>DOC ID NOT FOUND</arg>
 </arguments>
-<status status="PASS" endtime="20170714 13:09:51.482" starttime="20170714 13:09:51.171"></status>
+<status status="PASS" endtime="20170714 14:07:27.585" starttime="20170714 14:07:27.322"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170714 13:09:51.572" starttime="20170714 13:09:51.483"></status>
+<status status="PASS" endtime="20170714 14:07:27.761" starttime="20170714 14:07:27.586"></status>
 </kw>
 <tags>
 <tag>feature2</tag>
 </tags>
-<status status="PASS" endtime="20170714 13:09:51.573" critical="yes" starttime="20170714 13:09:48.186"></status>
+<status status="PASS" endtime="20170714 14:07:27.761" critical="yes" starttime="20170714 14:07:24.191"></status>
 </test>
 <test id="s1-s1-t3" name="Input docID = &quot;&quot; should return &quot;Please Enter DOC ID!!!&quot;">
 <kw name="Open search document">
@@ -173,10 +173,10 @@
 <arg>${BASE_SERVER}</arg>
 <arg>gc</arg>
 </arguments>
-<msg timestamp="20170714 13:09:51.575" level="INFO">Opening browser 'gc' to base url 'http://localhost:8080/'</msg>
-<status status="PASS" endtime="20170714 13:09:54.222" starttime="20170714 13:09:51.575"></status>
+<msg timestamp="20170714 14:07:27.764" level="INFO">Opening browser 'gc' to base url 'http://localhost:8080/'</msg>
+<status status="PASS" endtime="20170714 14:07:30.373" starttime="20170714 14:07:27.764"></status>
 </kw>
-<status status="PASS" endtime="20170714 13:09:54.222" starttime="20170714 13:09:51.574"></status>
+<status status="PASS" endtime="20170714 14:07:30.374" starttime="20170714 14:07:27.763"></status>
 </kw>
 <kw name="Search document">
 <arguments>
@@ -188,18 +188,18 @@
 <arg>docID</arg>
 <arg>${doc id}</arg>
 </arguments>
-<msg timestamp="20170714 13:09:54.226" level="INFO">Typing text '' into text field 'docID'</msg>
-<status status="PASS" endtime="20170714 13:09:54.370" starttime="20170714 13:09:54.225"></status>
+<msg timestamp="20170714 14:07:30.379" level="INFO">Typing text '' into text field 'docID'</msg>
+<status status="PASS" endtime="20170714 14:07:30.533" starttime="20170714 14:07:30.378"></status>
 </kw>
 <kw name="Click Button" library="Selenium2Library">
 <doc>Clicks a button identified by `locator`.</doc>
 <arguments>
 <arg>document-search-submit</arg>
 </arguments>
-<msg timestamp="20170714 13:09:54.370" level="INFO">Clicking button 'document-search-submit'.</msg>
-<status status="PASS" endtime="20170714 13:09:54.474" starttime="20170714 13:09:54.370"></status>
+<msg timestamp="20170714 14:07:30.533" level="INFO">Clicking button 'document-search-submit'.</msg>
+<status status="PASS" endtime="20170714 14:07:30.640" starttime="20170714 14:07:30.533"></status>
 </kw>
-<status status="PASS" endtime="20170714 13:09:54.474" starttime="20170714 13:09:54.223"></status>
+<status status="PASS" endtime="20170714 14:07:30.640" starttime="20170714 14:07:30.375"></status>
 </kw>
 <kw name="Wait Until Element Contains" library="Selenium2Library">
 <doc>Waits until given element contains `text`.</doc>
@@ -207,20 +207,20 @@
 <arg>id=errorMSG</arg>
 <arg>Please Enter DOC ID!!!</arg>
 </arguments>
-<status status="PASS" endtime="20170714 13:09:54.523" starttime="20170714 13:09:54.475"></status>
+<status status="PASS" endtime="20170714 14:07:30.686" starttime="20170714 14:07:30.640"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170714 13:09:54.706" starttime="20170714 13:09:54.524"></status>
+<status status="PASS" endtime="20170714 14:07:30.789" starttime="20170714 14:07:30.687"></status>
 </kw>
 <tags>
 <tag>feature2</tag>
 </tags>
-<status status="PASS" endtime="20170714 13:09:54.707" critical="yes" starttime="20170714 13:09:51.573"></status>
+<status status="PASS" endtime="20170714 14:07:30.789" critical="yes" starttime="20170714 14:07:27.762"></status>
 </test>
-<status status="PASS" endtime="20170714 13:09:54.708" starttime="20170714 13:09:38.624"></status>
+<status status="PASS" endtime="20170714 14:07:30.790" starttime="20170714 14:07:16.814"></status>
 </suite>
-<status status="PASS" endtime="20170714 13:09:54.712" starttime="20170714 13:09:38.536"></status>
+<status status="PASS" endtime="20170714 14:07:30.794" starttime="20170714 14:07:16.740"></status>
 </suite>
 <statistics>
 <total>

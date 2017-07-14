@@ -1,11 +1,12 @@
 <template>
   <div id="app">
 
-
   <div style="position: fixed; z-index: -98; width: 100%; height: 100%; background-color:rgba(255, 255, 255,0)">
   
 <div class="dms-app">
-    <label for="from" style="color:white;">Enter DOC ID DEPLOY</label>
+
+    <label for="from" style="color:white;" > ¯\_༼ ಥ ‿ ಥ ༽_/¯ <b>Enter DOC ID</b> ¯\_༼ ಥ ‿ ಥ ༽_/¯ </label>
+
     <br />
     <input type="text" v-model="docId" name="docID" id="docID" style="height: 20px; width: 200px;"/>
     <br />
