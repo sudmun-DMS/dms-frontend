@@ -1,11 +1,17 @@
 <template>
   <div id="app">
-    <label for="from">Enter DOC ID DEPLOY LA</label>
+
+
+  <div style="position: fixed; z-index: -98; width: 100%; height: 100%; background-color:rgba(255, 255, 255,0)">
+  
+<div class="dms-app">
+    <label for="from" style="color:white;">Enter DOC ID DEPLOY</label>
     <br />
     <input type="text" v-model="docId" name="docID" id="docID" style="height: 20px; width: 200px;"/>
     <br />
     <button id="document-search-submit" v-on:click="submitDoc(docId)">Submit</button>
     <br /><br />
+    <div style="color:white;">
     <div v-if="isError" id="errorMSG">
    {{msg}}
     </div>
@@ -26,6 +32,21 @@
     Description: = {{resultMsg.description}}
     </div>
     </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <div style="position: fixed; z-index: -99; width: 100%; opacity: .3; height: 100%; background-color:rgba(255, 255, 255,0)">
+    <iframe frameborder="0" height="100%" width="100%"
+      src="https://youtube.com/embed/dKrVegVI0Us?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1">
+    </iframe>
+  </div>
+
+
+
+
 
   </div>
 </template>
@@ -112,6 +133,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background-color:black;
+}
+
+.dms-app{
   margin-top: 60px;
 }
 
