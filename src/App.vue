@@ -4,7 +4,6 @@
   <div style="position: fixed; z-index: -98; width: 100%; height: 100%; background-color:rgba(255, 255, 255,0)">
   
 <div class="dms-app">
-
     <label for="from" > ¯\_༼ ಥ ‿ ಥ ༽_/¯ <b>Enter DOC ID</b> ¯\_༼ ಥ ‿ ಥ ༽_/¯ </label>
 
     <br />
@@ -49,7 +48,7 @@
 
 
 
-
+<vue-progress-bar></vue-progress-bar>
   </div>
 </template>
 
@@ -71,6 +70,10 @@ export default {
        },
        isError:true
     }
+  },
+  mounted () {
+    //  [App.vue specific] When App.vue is finish loading finish the progress bar
+    this.$Progress.finish()
   },
   methods: {
     success (docData) {
@@ -96,8 +99,10 @@ export default {
       
     },
     submitDoc (id) {
+      this.$Progress.start()
       if (!id.match(/\S/)){
          this.msg = "Please Enter DOC ID!!!"
+          this.$Progress.fail()
       }
       else 
       {
@@ -113,9 +118,11 @@ export default {
             this.failed (response)
             }
           console.log(response)
+          this.$Progress.finish()
         })
         .catch(error => {
           console.log(error)
+           this.$Progress.fail()
           alert(error)
         })
       

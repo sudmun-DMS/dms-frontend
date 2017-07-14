@@ -197,7 +197,7 @@ async-validator@^1.7.1:
   dependencies:
     babel-runtime "6.x"
 
-async@2.1.4, async@^2.0.1, async@^2.1.2:
+async@2.1.4:
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/async/-/async-2.1.4.tgz#2d2160c7788032e4dd6cbe2502f1f9a2c8f6cde4"
   dependencies:
@@ -207,7 +207,7 @@ async@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@^2.4.1:
+async@^2.0.1, async@^2.1.2, async@^2.4.1:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/async/-/async-2.5.0.tgz#843190fd6b7357a0b9e1c956edddd5ec8462b54d"
   dependencies:
@@ -3477,6 +3477,12 @@ process@^0.11.0:
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
 
+progressbar.js@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/progressbar.js/-/progressbar.js-1.0.1.tgz#f7fbfc195240fe0bb32f6f7bdb2e7ff400ea71f9"
+  dependencies:
+    shifty "^1.5.2"
+
 prompt@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/prompt/-/prompt-1.0.0.tgz#8e57123c396ab988897fb327fd3aedc3e735e4fe"
@@ -3963,6 +3969,10 @@ shelljs@0.7.0:
     glob "^7.0.0"
     interpret "^1.0.0"
     rechoir "^0.6.2"
+
+shifty@^1.5.2:
+  version "1.5.4"
+  resolved "https://registry.yarnpkg.com/shifty/-/shifty-1.5.4.tgz#d4362fc914dd280ddf6e522be408b21203208346"
 
 sigmund@^1.0.1:
   version "1.0.1"
@@ -4452,6 +4462,12 @@ vue-loader@^12.1.0:
     vue-hot-reload-api "^2.1.0"
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
+
+vue-progress@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/vue-progress/-/vue-progress-0.2.1.tgz#4911298b1a0eaa7b8232377bc3413725018075a4"
+  dependencies:
+    progressbar.js "^1.0.1"
 
 vue-progressbar@^0.7.2:
   version "0.7.2"
