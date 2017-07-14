@@ -73,12 +73,12 @@ export default {
       
     },
     submitDoc (id) {
-      if (id == ""){
+      if (!id.match(/\S/)){
          this.msg = "Please Enter DOC ID!!!"
       }
       else 
       {
-        let baseURL = "http://172.17.35.66:8080"         
+        let baseURL = "http://188.166.218.202"         
         Axios.get(baseURL + "/document/"+id)
         .then( (response)=>{
           let returnCode = response.data.header.code

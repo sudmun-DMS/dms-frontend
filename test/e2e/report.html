@@ -5,7 +5,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 3.0.2 (Python 2.7.13 on darwin)" name="Generator">
+<meta content="Robot Framework 3.0 (Python 2.7.13 on darwin)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAJEBoACtnfgA5cYYAERsiAEx2lAAbKkQAcazBACZCVwAcM1cAK0ucAAMDBQAnQncASG+FABkoVQAyWmgA6f8SgvH/Ij99+GLyIinyJfn/Yi//KSLzUy9iZogpIld3/4JVVTkid7vyUjNVNVJEAGOZ6Z7pXwAABpmZkRiLAAAGiJZpmGAAAEEt3SXdxAAATC7o/u3EAAC8MRZpjasAAAY1VVVTYAAABKqqqqpAAAAADKqq4AAAAAAAv4sAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMADAADgAwAA4AcAAOAHAADgBwAAwAcAAOAHAADgDwAA8A8AAPg/AAD+fwAA">
 <style media="all" type="text/css">
 /* Generic and misc styles */
@@ -516,7 +516,7 @@ a:link, a:visited {
 .doc pre {
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #f4f4f4;
+    background: #eee;
 }
 .doc code {
     padding: 0 0.2em;
@@ -1020,16 +1020,8 @@ window.util = function () {
         var base = window.output ? window.output.baseMillis : 0;
         return new Date(base + millis);
     }
-    function createGeneratedString(timestamp) {
-        var date = new Date(timestamp);
-        var dt = dateTimeFromDate(date).slice(0, 17);  // drop millis
-        var offset = date.getTimezoneOffset();
-        var sign = offset > 0 ? '-' : '+';
-        var hours = Math.floor(Math.abs(offset) / 60);
-        var mins = Math.abs(offset) % 60;
-        return dt + ' GMT' + sign + padTo(hours, 2) + ':' + padTo(mins, 2);
-    }
-    function createGeneratedAgoString(timestamp) {
+    function createGeneratedAgoString(generatedMillis) {
+        generatedMillis = timestamp(generatedMillis);
         function timeString(time, shortUnit) {
             var unit = {y: 'year', d: 'day', h: 'hour', m: 'minute',
                         s: 'second'}[shortUnit];
@@ -1040,7 +1032,7 @@ window.util = function () {
             // Not a perfect algorithm but ought to be enough
             return days - Math.floor(years / 4);
         }
-        var generated = Math.round(timestamp / 1000);
+        var generated = Math.round(generatedMillis / 1000);
         var current = Math.round(new Date().getTime() / 1000);
         var elapsed = current - generated;
         var prefix = '';
@@ -1099,7 +1091,6 @@ window.util = function () {
         dateTimeFromDate: dateTimeFromDate,
         formatElapsed: formatElapsed,
         timestamp: timestamp,
-        createGeneratedString: createGeneratedString,
         createGeneratedAgoString: createGeneratedAgoString,
         parseQueryString: parseQueryString
     };
@@ -1400,7 +1391,6 @@ function setTitle(suiteName, type) {
     document.title = util.unescape(title);
 }
 function addHeader() {
-    var generated = util.timestamp(window.output.generated);
     $.tmpl('<h1>${title}</h1>' +
            '<div id="generated">' +
              '<span>Generated<br>${generated}</span><br>' +
@@ -1409,8 +1399,8 @@ function addHeader() {
            '<div id="top-right-header">' +
              '<div id="report-or-log-link"><a href="#"></a></div>' +
            '</div>', {
-        generated: util.createGeneratedString(generated),
-        ago: util.createGeneratedAgoString(generated),
+        generated: window.output.generatedTimestamp,
+        ago: util.createGeneratedAgoString(window.output.generatedMillis),
         title: document.title
     }).appendTo($('#header'));
 }
@@ -1567,22 +1557,25 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,7152],[],[[4,0,1,0,[],[1,764,6367],[]]],[],[1,1,1,1]];
+window.output["suite"] = [1,2,3,0,[],[1,0,9705],[],[[4,0,1,0,[5],[1,344,3323],[]],[6,0,1,0,[7],[1,3669,3175],[]],[8,0,1,0,[7],[1,6845,2859],[]]],[],[3,3,3,3]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Search-Dms-By-Id","*/Users/archer/Desktop/vue-template-webpack-simple/e2e/search-dms-by-id.robot","*search-dms-by-id.robot","*search doc id"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Search-Dms-By-Id","*/Users/uhura/Desktop/dms-frontend/test/e2e/search-dms-by-id.robot","*search-dms-by-id.robot","*Input docID = 1 should return &quot;DOC ID = 1 link: = http://file01.txt&quot;","*feature1","*Input docID = 5 should return &quot;DOC ID NOT FOUND&quot;","*feature2","*Input docID = &quot;&quot; should return &quot;Please Enter DOC ID!!!&quot;"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:06","fail":0,"label":"Critical Tests","pass":1},{"elapsed":"00:00:06","fail":0,"label":"All Tests","pass":1}],[],[{"elapsed":"00:00:07","fail":0,"id":"s1","label":"Search-Dms-By-Id","name":"Search-Dms-By-Id","pass":1}]];
+window.output["stats"] = [[{"elapsed":"00:00:09","fail":0,"label":"Critical Tests","pass":3},{"elapsed":"00:00:09","fail":0,"label":"All Tests","pass":3}],[{"elapsed":"00:00:03","fail":0,"label":"feature1","pass":1},{"elapsed":"00:00:06","fail":0,"label":"feature2","pass":2}],[{"elapsed":"00:00:10","fail":0,"id":"s1","label":"Search-Dms-By-Id","name":"Search-Dms-By-Id","pass":3}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1499847755940;
+window.output["baseMillis"] = 1500009048955;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 7229;
+window.output["generatedMillis"] = 9045;
+</script>
+<script type="text/javascript">
+window.output["generatedTimestamp"] = "20170714 12:10:58 GMT +07:00";
 </script>
 <script type="text/javascript">
 window.settings = {"background":{"fail":"#f66","nonCriticalFail":"#9e9","pass":"#9e9"},"logURL":"log.html","title":""};
