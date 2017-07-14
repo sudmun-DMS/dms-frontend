@@ -5,14 +5,14 @@
   
 <div class="dms-app">
 
-    <label for="from" style="color:white;" > ¯\_༼ ಥ ‿ ಥ ༽_/¯ <b>Enter DOC ID</b> ¯\_༼ ಥ ‿ ಥ ༽_/¯ </label>
+    <label for="from" > ¯\_༼ ಥ ‿ ಥ ༽_/¯ <b>Enter DOC ID</b> ¯\_༼ ಥ ‿ ಥ ༽_/¯ </label>
 
     <br />
-    <input type="text" v-on:keyup.enter="submitDoc(docId)" v-model="docId" name="docID" id="docID" style="height: 20px; width: 200px;"/>
+    <input class="input" type="text" v-on:keyup.enter="submitDoc(docId)" v-model="docId" name="docID" id="docID" style="height: 30px; width: 250px;"/>
     <br />
-    <button id="document-search-submit" v-on:click="submitDoc(docId)">Submit</button>
+    <button class="button" id="document-search-submit" v-on:click="submitDoc(docId)">Submit</button>
     <br /><br />
-    <div style="color:white;">
+    <div  >
     <div v-if="isError" id="errorMSG">
    {{msg}}
     </div>
