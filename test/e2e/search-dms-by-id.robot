@@ -16,18 +16,14 @@ Input docID = 1 should return "DOC ID = 1 link: = http://file01.txt"
 Input docID = 5 should return "DOC ID NOT FOUND"
     [Tags]  feature2
     Open search document
-    # Clear Element Text  docID
     Search document    5
     Click Button   document-search-submit
     Wait Until Element Contains    id=errorMSG    DOC ID NOT FOUND
-    # Element Text Should Be     errorMSG    DOC ID NOT FOUND
 
 Input docID = "" should return "Please Enter DOC ID!!!"
     [Tags]  feature2
     Open search document
-    # Clear Element Text  docID
     Search document    ${EMPTY}
-    # Element Text Should Be     errorMSG    Please Enter DOC ID!!!
     Wait Until Element Contains    id=errorMSG    Please Enter DOC ID!!!
 
 
@@ -38,11 +34,9 @@ Should found document
     
     Wait Until Element Is Visible   id=docIdResult
     Wait Until Element Contains    id=docIdResult    DOC ID: = ${doc id}
-    # Element Text Should Be     docIdResult     DOC ID: = 1
     Element Text Should Be     status     Status: = RELEASE
     Element Text Should Be     user     User: = SUV
     Element Text Should Be     description     Description: = PMOC
-    #${desc}    Get Text    id=descspan
     Element Should Contain     link     http://archive/PMOC
 
 Search document
@@ -52,4 +46,3 @@ Search document
 
 Open search document
     Open Browser    ${BASE_SERVER}    gc
-    # Set Browser Implicit Wait    2 seconds
