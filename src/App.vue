@@ -8,7 +8,7 @@
     <label for="from" style="color:white;" > ¯\_༼ ಥ ‿ ಥ ༽_/¯ <b>Enter DOC ID</b> ¯\_༼ ಥ ‿ ಥ ༽_/¯ </label>
 
     <br />
-    <input type="text" v-model="docId" name="docID" id="docID" style="height: 20px; width: 200px;"/>
+    <input type="text" v-on:keyup.enter="submitDoc(docId)" v-model="docId" name="docID" id="docID" style="height: 20px; width: 200px;"/>
     <br />
     <button id="document-search-submit" v-on:click="submitDoc(docId)">Submit</button>
     <br /><br />
