@@ -1,10 +1,11 @@
 <template>
   <div id="app">
+<div class="container">
 
   <div style="position: fixed; z-index: -98; width: 100%; height: 100%; background-color:rgba(255, 255, 255,0)">
   
 <div class="dms-app">
-    <label for="from" > ¯\_༼ ಥ ‿ ಥ ༽_/¯ <b>Enter DOC ID</b> ¯\_༼ ಥ ‿ ಥ ༽_/¯ </label>
+    <label for="from" ><b>Enter DOC ID</b></label>
 
     <br />
     <input class="input" type="text" v-on:keyup.enter="submitDoc(docId)" v-model="docId" name="docID" id="docID" style="height: 30px; width: 250px;"/>
@@ -49,7 +50,7 @@
 
 
 <vue-progress-bar></vue-progress-bar>
-  </div>
+  </div></div>
 </template>
 
 <script>
